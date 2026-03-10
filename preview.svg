@@ -1,0 +1,27 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0a0a0f"/>
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(0,255,136,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <ellipse cx="900" cy="200" rx="400" ry="300" fill="rgba(0,255,136,0.06)"/>
+  <rect x="40" y="40" width="1120" height="550" rx="16" fill="none" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
+  <rect x="80" y="80" width="220" height="36" rx="18" fill="rgba(0,255,136,0.1)" stroke="rgba(0,255,136,0.3)" stroke-width="1"/>
+  <circle cx="108" cy="98" r="5" fill="#00ff88"/>
+  <text x="125" y="103" font-family="monospace" font-size="14" fill="#00ff88" letter-spacing="2">AVAILABLE FOR HIRE</text>
+  <text x="80" y="220" font-family="Arial Black, sans-serif" font-size="72" font-weight="900" fill="#e8e8f0">ZAHID ALI</text>
+  <text x="80" y="290" font-family="Arial Black, sans-serif" font-size="40" font-weight="900" fill="none" stroke="#00ff88" stroke-width="2">PYTHON DEVELOPER</text>
+  <line x1="80" y1="330" x2="500" y2="330" stroke="rgba(0,255,136,0.3)" stroke-width="1"/>
+  <text x="80" y="375" font-family="monospace" font-size="18" fill="#666680">Web Scraping  ·  REST APIs  ·  FastAPI  ·  MySQL  ·  LLM Integration</text>
+  <text x="80" y="450" font-family="Arial Black, sans-serif" font-size="48" font-weight="900" fill="#00ff88">17+</text>
+  <text x="80" y="480" font-family="monospace" font-size="14" fill="#666680">PROJECTS</text>
+  <text x="280" y="450" font-family="Arial Black, sans-serif" font-size="48" font-weight="900" fill="#00ff88">1+</text>
+  <text x="280" y="480" font-family="monospace" font-size="14" fill="#666680">YEARS EXP</text>
+  <text x="460" y="450" font-family="Arial Black, sans-serif" font-size="48" font-weight="900" fill="#00ff88">100%</text>
+  <text x="460" y="480" font-family="monospace" font-size="14" fill="#666680">PRODUCTION READY</text>
+  <text x="80" y="555" font-family="monospace" font-size="16" fill="rgba(0,255,136,0.6)">zahid2021.github.io</text>
+  <rect x="950" y="430" width="200" height="50" rx="8" fill="rgba(0,255,136,0.08)" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
+  <text x="1050" y="462" font-family="monospace" font-size="14" fill="#00ff88" text-anchor="middle">GitHub Profile →</text>
+</svg>
