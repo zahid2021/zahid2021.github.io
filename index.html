@@ -31,7 +31,7 @@
   --max: 1120px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --shadow: 0 18px 40px rgba(21, 32, 51, 0.08);
-  --shadow-hover: 0 26px 55px rgba(15, 118, 110, 0.14);
+  --shadow-hover: 0 26px 55px rgba(37, 99, 235, 0.14);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -245,8 +245,8 @@ nav.scrolled {
   transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
 }
 .stats-grid:hover {
-  border-color: rgba(15, 118, 110, 0.45);
-  box-shadow: 0 18px 40px rgba(15, 118, 110, 0.1);
+  border-color: var(--blue);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.12);
 }
 .stats-grid > div {
   text-align: center; opacity: 0; transform: translateY(14px);
@@ -284,8 +284,8 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
   transition: border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
 }
 .panel:hover {
-  border-color: rgba(15, 118, 110, 0.45);
-  box-shadow: 0 18px 40px rgba(15, 118, 110, 0.1);
+  border-color: var(--blue);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.12);
 }
 
 .about-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; }
@@ -298,7 +298,7 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
 }
 .info-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(15, 118, 110, 0.5);
+  border-color: var(--blue);
   box-shadow: var(--shadow-hover);
 }
 .info-card .label {
@@ -323,7 +323,7 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
 }
 .skill-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(15, 118, 110, 0.5);
+  border-color: var(--blue);
   box-shadow: var(--shadow-hover);
 }
 .skill-card:hover::after { transform: scaleY(1); }
@@ -340,7 +340,7 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
   transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
 }
 .exp-card:hover {
-  border-color: rgba(15, 118, 110, 0.5);
+  border-color: var(--blue);
   box-shadow: var(--shadow-hover);
 }
 .exp-card::before {
@@ -456,7 +456,7 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
 }
 .project-card:hover {
   transform: translateY(-7px);
-  border-color: rgba(15, 118, 110, 0.5);
+  border-color: var(--blue);
   box-shadow: var(--shadow-hover);
 }
 .project-card:hover::before { left: 130%; }
