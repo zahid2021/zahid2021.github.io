@@ -7,325 +7,887 @@
 <title>Zahid Mehmood | Software Engineer</title>
 <meta name="description" content="Python Software Engineer specializing in FastAPI backends, AI chatbots, CRM automation, and production web scraping. Based in Lahore, Pakistan.">
 <meta property="og:title" content="Zahid Mehmood | Software Engineer">
-<meta property="og:description" content="Python Software Engineer — FastAPI, AI chatbots, CRM automation, web scraping. 1+ year at Rixtysoft. Portfolio of production systems.">
+<meta property="og:description" content="Python Software Engineer — FastAPI, AI chatbots, CRM automation, web scraping. 1+ year at Rixtysoft.">
 <meta property="og:image" content="https://zahid2021.github.io/preview.png">
 <meta property="og:url" content="https://zahid2021.github.io">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #10141c;
-  --ink-soft: #2a3344;
-  --muted: #5c6b7e;
-  --line: #d7dee8;
-  --line-soft: #e8edf4;
-  --bg: #f3f5f8;
+  --bg: #f7f6f3;
+  --bg-2: #efeee9;
   --surface: #ffffff;
-  --surface-2: #f8fafc;
-  --accent: #0f766e;
-  --accent-bright: #14b8a6;
-  --accent-soft: rgba(15, 118, 110, 0.1);
-  --accent-border: rgba(15, 118, 110, 0.22);
-  --navy: #0b1c2d;
-  --blue: #2563eb;
-  --blue-soft: rgba(37, 99, 235, 0.1);
-  --radius: 18px;
-  --max: 1140px;
-  --nav-h: 72px;
-  --shadow: 0 18px 40px rgba(16, 20, 28, 0.08);
-  --shadow-lg: 0 28px 60px rgba(16, 20, 28, 0.12);
+  --ink: #141414;
+  --ink-2: #2c2c2c;
+  --muted: #6f6b64;
+  --line: rgba(20, 20, 20, 0.08);
+  --line-strong: rgba(20, 20, 20, 0.14);
+  --accent: #1f4b3a;
+  --accent-bright: #2f6b52;
+  --accent-soft: rgba(31, 75, 58, 0.08);
+  --gold: #9a7b4f;
+  --gold-soft: rgba(154, 123, 79, 0.12);
+  --navy: #102033;
+  --max: 1180px;
+  --nav-h: 74px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow: 0 20px 50px rgba(20, 20, 20, 0.07);
+  --shadow-hover: 0 28px 60px rgba(20, 20, 20, 0.12);
 }
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Manrope', system-ui, sans-serif;
+  font-family: 'Sora', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
-body::before {
-  content: '';
+::selection { background: rgba(31, 75, 58, 0.18); color: var(--ink); }
+a { color: inherit; }
+.wrap { width: min(100% - 40px, var(--max)); margin-inline: auto; }
+
+/* Ambient background */
+.ambient {
   position: fixed;
   inset: 0;
-  background:
-    radial-gradient(ellipse 70% 45% at 0% 0%, rgba(20, 184, 166, 0.12), transparent 55%),
-    radial-gradient(ellipse 55% 40% at 100% 10%, rgba(37, 99, 235, 0.08), transparent 50%),
-    linear-gradient(180deg, #eef2f7 0%, #f3f5f8 40%, #f7f8fb 100%);
-  pointer-events: none;
   z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
-a { color: inherit; }
-img { max-width: 100%; display: block; }
+.ambient span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.45;
+  animation: floatOrb 14s var(--ease) infinite alternate;
+}
+.ambient span:nth-child(1) {
+  width: 420px; height: 420px; left: -80px; top: -60px;
+  background: rgba(31, 75, 58, 0.18);
+}
+.ambient span:nth-child(2) {
+  width: 380px; height: 380px; right: -100px; top: 20%;
+  background: rgba(154, 123, 79, 0.16);
+  animation-delay: -4s;
+}
+.ambient span:nth-child(3) {
+  width: 460px; height: 460px; left: 30%; bottom: -120px;
+  background: rgba(16, 32, 51, 0.08);
+  animation-delay: -7s;
+}
+@keyframes floatOrb {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(30px, 40px, 0) scale(1.12); }
+}
 
+/* Nav */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 clamp(20px, 5vw, 48px);
-  background: rgba(243, 245, 248, 0.82);
+  position: fixed;
+  inset: 0 0 auto;
+  height: var(--nav-h);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 4vw, 48px);
+  transition: background 0.35s var(--ease), border-color 0.35s, backdrop-filter 0.35s, box-shadow 0.35s;
+  border-bottom: 1px solid transparent;
+}
+nav.scrolled {
+  background: rgba(247, 246, 243, 0.82);
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(215, 222, 232, 0.8);
+  border-bottom-color: var(--line);
+  box-shadow: 0 10px 30px rgba(20, 20, 20, 0.04);
 }
 .nav-logo {
-  font-family: 'Fraunces', Georgia, serif; font-weight: 800; font-size: 1.35rem;
-  letter-spacing: -0.03em; text-decoration: none; color: var(--ink);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.55rem;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  color: var(--ink);
 }
-.nav-logo span { color: var(--accent); }
-.nav-links { display: flex; gap: clamp(18px, 3vw, 30px); list-style: none; }
+.nav-logo span { color: var(--accent); font-style: italic; }
+.nav-links { display: flex; gap: clamp(18px, 2.8vw, 32px); list-style: none; }
 .nav-links a {
-  text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
-  text-transform: uppercase; color: var(--muted); transition: color 0.2s;
+  position: relative;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.25s;
 }
-.nav-links a:hover { color: var(--accent); }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 100%; height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s var(--ease);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
 .nav-cta {
-  display: inline-flex; align-items: center; background: var(--navy); color: #fff;
-  text-decoration: none; font-weight: 700; font-size: 0.86rem; padding: 11px 20px;
-  border-radius: 999px; transition: transform 0.2s, background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 999px;
+  transition: transform 0.3s var(--ease), background 0.3s, box-shadow 0.3s;
 }
-.nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
+.nav-cta:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(31, 75, 58, 0.25);
+}
 .nav-toggle {
-  display: none; background: var(--surface); border: 1px solid var(--line); color: var(--ink);
-  width: 42px; height: 42px; border-radius: 12px; cursor: pointer; font-size: 1.1rem;
+  display: none;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--ink);
 }
 
-.wrap { width: min(100% - 40px, var(--max)); margin-inline: auto; }
-section { position: relative; z-index: 1; padding: clamp(70px, 10vw, 120px) 0; }
+/* Hero */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  align-items: end;
+  padding: calc(var(--nav-h) + 48px) 0 72px;
+  overflow: hidden;
+}
+.hero-panel {
+  position: absolute;
+  inset: 18px;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(154, 123, 79, 0.28), transparent 28%),
+    radial-gradient(circle at 12% 80%, rgba(47, 107, 82, 0.3), transparent 32%),
+    linear-gradient(145deg, #102033 0%, #163047 45%, #1f4b3a 100%);
+  overflow: hidden;
+  z-index: -1;
+  animation: heroIn 1.1s var(--ease) both;
+}
+@keyframes heroIn {
+  from { opacity: 0; transform: scale(0.985); }
+  to { opacity: 1; transform: scale(1); }
+}
+.hero-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle at 30% 30%, #000 20%, transparent 70%);
+  animation: gridDrift 18s linear infinite;
+}
+@keyframes gridDrift {
+  from { background-position: 0 0; }
+  to { background-position: 56px 56px; }
+}
+.hero-panel::after {
+  content: '';
+  position: absolute;
+  width: 280px; height: 280px;
+  right: 8%; top: 18%;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  animation: ringPulse 6s var(--ease) infinite;
+}
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.08); opacity: 0.9; }
+}
+.hero .wrap { color: #fff; padding-bottom: 18px; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  color: #e8d7b8;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: rise 0.9s var(--ease) 0.15s both;
+}
+.hero-badge i {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #7dcea0;
+  box-shadow: 0 0 0 0 rgba(125, 206, 160, 0.5);
+  animation: liveDot 2s ease infinite;
+  font-style: normal;
+}
+@keyframes liveDot {
+  0% { box-shadow: 0 0 0 0 rgba(125, 206, 160, 0.55); }
+  70% { box-shadow: 0 0 0 10px rgba(125, 206, 160, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(125, 206, 160, 0); }
+}
+.hero h1 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(3.2rem, 10vw, 6.2rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  max-width: 10ch;
+  margin-bottom: 18px;
+  animation: rise 0.9s var(--ease) 0.25s both;
+}
+.hero-role {
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 20px;
+  animation: rise 0.9s var(--ease) 0.35s both;
+}
+.hero-role strong { color: #e8d7b8; font-weight: 600; }
+.hero-desc {
+  max-width: 620px;
+  color: rgba(255,255,255,0.66);
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 28px;
+  animation: rise 0.9s var(--ease) 0.45s both;
+}
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 10px 18px;
+  margin-bottom: 34px;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.86rem;
+  animation: rise 0.9s var(--ease) 0.55s both;
+}
+.hero-meta a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  transition: color 0.25s, border-color 0.25s;
+}
+.hero-meta a:hover { color: #e8d7b8; border-color: #e8d7b8; }
+.hero-actions {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  animation: rise 0.9s var(--ease) 0.65s both;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none; font-weight: 600; font-size: 0.9rem;
+  padding: 14px 24px; border-radius: 999px;
+  transition: transform 0.3s var(--ease), background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.btn:hover { transform: translateY(-3px); }
+.btn-primary {
+  background: #fff; color: var(--navy);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.2);
+}
+.btn-primary:hover { background: #e8d7b8; color: #1a140c; }
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,0.28);
+  color: #fff; background: rgba(255,255,255,0.04);
+}
+.btn-ghost:hover {
+  border-color: #e8d7b8; color: #e8d7b8;
+  background: rgba(232, 215, 184, 0.08);
+}
+
+/* Stats */
+.stats { position: relative; z-index: 2; margin-top: -42px; padding-bottom: 20px; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background: rgba(255,255,255,0.86);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 28px 16px;
+  box-shadow: var(--shadow);
+}
+.stats-grid > div {
+  text-align: center;
+  padding: 8px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.stats-grid > div.show { opacity: 1; transform: translateY(0); }
+.stat-num {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Sections */
+section { position: relative; z-index: 1; padding: clamp(72px, 10vw, 120px) 0; }
 .section-label {
-  font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 14px; font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.section-label::before {
+  content: '';
+  width: 28px; height: 1px;
+  background: var(--gold);
 }
 .section-title {
-  font-family: 'Fraunces', Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.1rem);
-  font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 32px; color: var(--ink);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 34px;
+  color: var(--ink);
 }
-.section-title em { font-style: italic; color: var(--accent); font-weight: 700; }
+.section-title em {
+  font-style: italic;
+  color: var(--accent);
+}
 
-.hero {
-  min-height: 100vh; min-height: 100dvh; display: flex; align-items: center;
-  padding-top: calc(var(--nav-h) + 28px); padding-bottom: 72px; position: relative; z-index: 1;
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: clamp(24px, 5vw, 56px);
 }
-.hero::before {
-  content: ''; position: absolute; inset: 0; z-index: -2;
-  background: linear-gradient(135deg, #0b1c2d 0%, #12324a 48%, #0f5f56 100%);
+.about-copy p {
+  color: var(--muted);
+  margin-bottom: 18px;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  font-weight: 300;
 }
-.hero::after {
-  content: ''; position: absolute; inset: 0; z-index: -1;
-  background:
-    radial-gradient(circle at 85% 20%, rgba(20, 184, 166, 0.28), transparent 35%),
-    radial-gradient(circle at 15% 80%, rgba(37, 99, 235, 0.18), transparent 40%);
-}
-.hero .wrap { color: #fff; }
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18);
-  color: #9ff0e3; padding: 8px 16px; border-radius: 999px; font-size: 0.74rem;
-  letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; margin-bottom: 28px;
-}
-.hero-badge::before {
-  content: ''; width: 8px; height: 8px; border-radius: 50%; background: #2dd4bf;
-  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.2); animation: pulse 2s infinite;
-}
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
-.hero h1 {
-  font-family: 'Fraunces', Georgia, serif; font-size: clamp(2.8rem, 9vw, 5.2rem);
-  font-weight: 800; letter-spacing: -0.04em; line-height: 0.98; margin-bottom: 14px; max-width: 12ch;
-}
-.hero-role { font-size: clamp(1.05rem, 2.5vw, 1.35rem); font-weight: 500; color: rgba(255,255,255,0.72); margin-bottom: 22px; }
-.hero-role strong { color: #5eead4; font-weight: 700; }
-.hero-desc { max-width: 620px; color: rgba(255,255,255,0.68); font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.8; margin-bottom: 28px; }
-.hero-meta { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-bottom: 34px; color: rgba(255,255,255,0.58); font-size: 0.86rem; }
-.hero-meta a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); transition: border-color 0.2s, color 0.2s; }
-.hero-meta a:hover { color: #5eead4; border-color: #5eead4; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;
-  font-weight: 700; font-size: 0.92rem; padding: 14px 24px; border-radius: 999px;
-  transition: transform 0.2s, background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
-}
-.btn:hover { transform: translateY(-2px); }
-.btn-primary { background: #fff; color: var(--navy); box-shadow: 0 10px 30px rgba(0,0,0,0.18); }
-.btn-primary:hover { background: #5eead4; color: #042f2e; }
-.btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.28); color: #fff; }
-.btn-ghost:hover { border-color: #5eead4; color: #5eead4; background: rgba(94, 234, 212, 0.08); }
-
-.stats { position: relative; z-index: 2; margin-top: -36px; padding: 0 0 8px; }
-.stats-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
-  background: var(--surface); border: 1px solid var(--line); border-radius: 24px;
-  padding: 28px 18px; box-shadow: var(--shadow-lg);
-}
-.stats-grid > div { text-align: center; padding: 8px; }
-.stat-num { font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 8px; }
-.stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
-
-.about-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(24px, 5vw, 52px); align-items: start; }
-.about-copy p { color: var(--muted); margin-bottom: 18px; font-size: 1rem; line-height: 1.85; }
-.about-copy strong { color: var(--ink); font-weight: 700; }
+.about-copy strong { color: var(--ink); font-weight: 600; }
 .info-cards { display: flex; flex-direction: column; gap: 12px; }
 .info-card {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px;
-  box-shadow: 0 8px 20px rgba(16,20,28,0.03); transition: transform 0.2s, border-color 0.2s;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 22px;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s, border-color 0.35s;
 }
-.info-card:hover { transform: translateY(-2px); border-color: var(--accent-border); }
-.info-card .label { font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; font-weight: 500; }
-.info-card .value { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 1.08rem; color: var(--ink); }
-.info-card .sub { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: rgba(31, 75, 58, 0.2);
+}
+.info-card .label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.info-card .value {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+.info-card .sub { font-size: 0.84rem; color: var(--muted); margin-top: 4px; }
 
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
 .skill-card {
-  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; position: relative; overflow: hidden;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 26px;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s, border-color 0.4s;
 }
 .skill-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--blue)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease);
 }
-.skill-card:hover { border-color: var(--accent-border); transform: translateY(-4px); box-shadow: var(--shadow); }
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(31, 75, 58, 0.18);
+}
 .skill-card:hover::before { transform: scaleX(1); }
-.skill-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 14px; color: var(--ink); }
+.skill-card h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag { font-size: 0.72rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-border); padding: 5px 11px; border-radius: 999px; }
+.tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(31, 75, 58, 0.12);
+  padding: 6px 11px;
+  border-radius: 999px;
+}
 
 .exp-card {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
-  padding: clamp(24px, 4vw, 40px); box-shadow: var(--shadow); position: relative; overflow: hidden;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(26px, 4vw, 42px);
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
-.exp-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: linear-gradient(180deg, var(--accent), var(--blue)); }
-.exp-header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
-.exp-header h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.4rem; font-weight: 700; }
-.exp-company { color: var(--accent); font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
-.exp-dates { font-size: 0.78rem; color: var(--muted); background: var(--surface-2); border: 1px solid var(--line); padding: 8px 12px; border-radius: 999px; white-space: nowrap; font-weight: 600; }
-.exp-list { margin-top: 22px; display: flex; flex-direction: column; gap: 12px; list-style: none; }
-.exp-list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 0.94rem; line-height: 1.75; }
-.exp-list li::before { content: ''; position: absolute; left: 0; top: 0.7em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.exp-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--accent), var(--gold));
+}
+.exp-header {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-bottom: 8px;
+}
+.exp-header h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.55rem; font-weight: 400;
+}
+.exp-company { color: var(--accent); font-weight: 600; margin-bottom: 4px; }
+.exp-dates {
+  align-self: start;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold);
+  background: var(--gold-soft);
+  border: 1px solid rgba(154, 123, 79, 0.2);
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+.exp-list { margin-top: 22px; list-style: none; display: grid; gap: 12px; }
+.exp-list li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  font-weight: 300;
+}
+.exp-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.7em;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
 
+/* Featured */
 .featured {
-  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 0;
-  background: linear-gradient(145deg, #0b1c2d, #12324a 55%, #0f5f56);
-  border-radius: 24px; overflow: hidden; text-decoration: none; color: #fff;
-  transition: transform 0.25s, box-shadow 0.25s; margin-bottom: 40px; box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  border-radius: 30px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 36px;
+  background: linear-gradient(140deg, #102033, #163047 50%, #1f4b3a);
+  box-shadow: var(--shadow-hover);
+  transition: transform 0.45s var(--ease), box-shadow 0.45s;
+  position: relative;
 }
-.featured:hover { transform: translateY(-5px); box-shadow: 0 32px 70px rgba(11, 28, 45, 0.28); }
-.featured-body { padding: clamp(26px, 4vw, 42px); }
+.featured:hover {
+  transform: translateY(-8px) scale(1.005);
+  box-shadow: 0 36px 80px rgba(16, 32, 51, 0.28);
+}
+.featured-body { padding: clamp(28px, 4vw, 46px); }
 .featured-eyebrow {
-  display: inline-block; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: #99f6e4; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
-  padding: 5px 11px; border-radius: 999px; margin-bottom: 16px; font-weight: 700;
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e8d7b8;
+  border: 1px solid rgba(232, 215, 184, 0.28);
+  background: rgba(255,255,255,0.06);
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  font-weight: 600;
 }
-.featured h3 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
-.featured p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.8; margin-bottom: 20px; }
-.featured .tech-badge { color: rgba(255,255,255,0.82); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); }
+.featured h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.featured p {
+  color: rgba(255,255,255,0.68);
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 54ch;
+}
+.featured .tech-badge {
+  color: rgba(255,255,255,0.84);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.14);
+}
 .featured-side {
-  background: rgba(0,0,0,0.18); border-left: 1px solid rgba(255,255,255,0.1);
-  padding: clamp(26px, 4vw, 42px); display: flex; flex-direction: column; justify-content: center; gap: 14px;
+  border-left: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.16);
+  padding: clamp(28px, 4vw, 46px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
 }
-.featured-side .row { display: flex; justify-content: space-between; gap: 12px; font-size: 0.84rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-.featured-side .row:last-child { border-bottom: none; padding-bottom: 0; }
+.featured-side .row {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.88rem;
+}
+.featured-side .row:last-of-type { border-bottom: none; }
 .featured-side .k { color: rgba(255,255,255,0.5); }
-.featured-side .v { color: #fff; text-align: right; font-weight: 600; }
-.featured-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-weight: 800; font-size: 0.95rem; color: #5eead4; }
+.featured-side .v { color: #fff; font-weight: 600; text-align: right; }
+.featured-cta {
+  margin-top: 8px;
+  color: #e8d7b8;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s var(--ease);
+}
+.featured:hover .featured-cta { gap: 14px; }
 
 .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
 .filter-btn {
-  background: var(--surface); border: 1px solid var(--line); color: var(--muted); padding: 9px 16px;
-  border-radius: 999px; font-family: inherit; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+  border: 1px solid var(--line-strong);
+  background: rgba(255,255,255,0.7);
+  color: var(--muted);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
 }
-.filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: #fff; background: var(--accent); }
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; }
+.filter-btn:hover { color: var(--ink); border-color: var(--ink); }
+.filter-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
 .project-card {
-  display: flex; flex-direction: column; gap: 12px; background: var(--surface); border: 1px solid var(--line);
-  border-radius: 18px; padding: 24px; text-decoration: none; color: inherit;
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 100%;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s, border-color 0.4s;
 }
-.project-card:hover { border-color: var(--accent-border); transform: translateY(-5px); box-shadow: var(--shadow); }
-.project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(31, 75, 58, 0.2);
+}
+.project-top { display: flex; justify-content: space-between; align-items: flex-start; }
 .ptype {
-  font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px;
-  color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-border); font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(31, 75, 58, 0.12);
 }
-.ptype.api { color: var(--blue); background: var(--blue-soft); border-color: rgba(37, 99, 235, 0.22); }
-.ptype.ai { color: #0f766e; background: rgba(15, 118, 110, 0.08); border-color: rgba(15, 118, 110, 0.2); }
+.ptype.api {
+  color: #1d4ed8;
+  background: rgba(29, 78, 216, 0.08);
+  border-color: rgba(29, 78, 216, 0.14);
+}
+.ptype.ai {
+  color: var(--gold);
+  background: var(--gold-soft);
+  border-color: rgba(154, 123, 79, 0.2);
+}
 .arrow {
-  width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 50%; background: var(--surface-2); border: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; transition: all 0.2s;
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--bg);
+  color: var(--muted);
+  transition: all 0.35s var(--ease);
 }
-.project-card:hover .arrow { color: #fff; background: var(--accent); border-color: var(--accent); transform: translate(2px, -2px); }
-.project-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.12rem; font-weight: 700; line-height: 1.3; color: var(--ink); }
-.project-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; flex: 1; }
-.project-foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding-top: 14px; border-top: 1px solid var(--line-soft); margin-top: auto; }
-.tech-badge { font-size: 0.68rem; font-weight: 600; color: var(--ink-soft); background: var(--surface-2); border: 1px solid var(--line); padding: 4px 9px; border-radius: 999px; }
+.project-card:hover .arrow {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translate(3px, -3px) rotate(8deg);
+}
+.project-card h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+.project-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  font-weight: 300;
+  flex: 1;
+}
+.project-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
 .tech-row { display: flex; flex-wrap: wrap; gap: 6px; }
-.gh-label { font-size: 0.78rem; color: var(--muted); white-space: nowrap; font-weight: 700; }
+.tech-badge {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  padding: 4px 9px;
+  border-radius: 999px;
+}
+.gh-label { font-size: 0.78rem; font-weight: 600; color: var(--muted); }
 .project-card:hover .gh-label { color: var(--accent); }
 
 .edu-card {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 30px;
-  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; box-shadow: var(--shadow);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: var(--shadow);
 }
-.edu-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.35rem; font-weight: 700; margin-bottom: 6px; }
-.edu-card p { color: var(--muted); font-size: 0.95rem; }
-.edu-years { font-size: 0.84rem; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-border); padding: 10px 16px; border-radius: 999px; font-weight: 700; }
+.edu-card h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.edu-card p { color: var(--muted); }
+.edu-years {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(31, 75, 58, 0.14);
+  padding: 10px 16px;
+  border-radius: 999px;
+}
 
 .contact-panel {
-  background: linear-gradient(145deg, #0b1c2d, #12324a 60%, #0f5f56); border-radius: 28px;
-  padding: clamp(32px, 6vw, 56px); text-align: center; max-width: 820px; margin: 0 auto; color: #fff; box-shadow: var(--shadow-lg);
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  padding: clamp(36px, 6vw, 64px);
+  border-radius: 32px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(154, 123, 79, 0.25), transparent 35%),
+    linear-gradient(145deg, #102033, #163047 55%, #1f4b3a);
+  box-shadow: var(--shadow-hover);
+  position: relative;
+  overflow: hidden;
 }
-.contact-panel .section-label { color: #99f6e4; }
-.contact-panel h2 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 12px; color: #fff; }
-.contact-panel > p { color: rgba(255,255,255,0.68); font-size: 0.98rem; max-width: 540px; margin: 0 auto 28px; line-height: 1.75; }
+.contact-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.5;
+}
+.contact-panel > * { position: relative; z-index: 1; }
+.contact-panel .section-label { color: #e8d7b8; justify-content: center; }
+.contact-panel .section-label::before { background: #e8d7b8; }
+.contact-panel h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+.contact-panel > p {
+  max-width: 520px;
+  margin: 0 auto 28px;
+  color: rgba(255,255,255,0.68);
+  font-weight: 300;
+  line-height: 1.8;
+}
 .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .contact-link {
-  display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
-  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); color: #fff;
-  padding: 12px 18px; border-radius: 999px; font-size: 0.88rem; font-weight: 600;
-  transition: border-color 0.2s, color 0.2s, transform 0.2s, background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: transform 0.3s var(--ease), background 0.3s, border-color 0.3s, color 0.3s;
 }
-.contact-link:hover { border-color: #5eead4; color: #5eead4; background: rgba(94, 234, 212, 0.1); transform: translateY(-2px); }
+.contact-link:hover {
+  transform: translateY(-3px);
+  border-color: #e8d7b8;
+  color: #e8d7b8;
+  background: rgba(232, 215, 184, 0.1);
+}
 
 footer {
-  position: relative; z-index: 1; border-top: 1px solid var(--line);
-  padding: 28px clamp(20px, 5vw, 48px); display: flex; flex-wrap: wrap; justify-content: space-between;
-  gap: 12px; color: var(--muted); font-size: 0.8rem; background: rgba(255,255,255,0.45);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 28px clamp(20px, 4vw, 48px);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.8rem;
 }
-footer .accent { color: var(--accent); font-weight: 700; }
+footer .accent { color: var(--accent); font-weight: 600; }
 
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* Reveal system */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
 
 @media (max-width: 900px) {
   .about-grid, .featured { grid-template-columns: 1fr; }
   .featured-side { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-panel { inset: 10px; border-radius: 24px; }
 }
 @media (max-width: 768px) {
   .nav-links, .nav-cta { display: none; }
-  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .nav-toggle { display: grid; place-items: center; }
   nav.open .nav-links {
-    display: flex; position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; gap: 0;
-    background: rgba(243, 245, 248, 0.98); border-bottom: 1px solid var(--line); padding: 12px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: rgba(247, 246, 243, 0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+    padding: 8px 20px 18px;
   }
-  nav.open .nav-links a { padding: 14px 4px; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
-  nav.open .nav-cta { display: inline-flex; position: absolute; top: calc(var(--nav-h) + 230px); left: 20px; right: 20px; justify-content: center; }
-  .hero { min-height: auto; padding-top: calc(var(--nav-h) + 48px); padding-bottom: 88px; }
-  .stats { margin-top: -28px; }
+  nav.open .nav-links a {
+    padding: 14px 2px;
+    border-bottom: 1px solid var(--line);
+  }
+  nav.open .nav-cta {
+    display: inline-flex;
+    position: absolute;
+    top: calc(var(--nav-h) + 250px);
+    left: 20px; right: 20px;
+    justify-content: center;
+  }
+  .hero { min-height: auto; padding-top: calc(var(--nav-h) + 36px); padding-bottom: 90px; }
+  .stats { margin-top: -34px; }
 }
 @media (max-width: 480px) {
   .wrap { width: min(100% - 28px, var(--max)); }
-  .stats-grid { gap: 8px; padding: 20px 10px; }
   .hero-actions .btn { width: 100%; }
   .hero h1 { max-width: none; }
+  .stats-grid { padding: 20px 8px; gap: 8px; }
 }
-
 </style>
 </head>
 <body>
+<div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+
 <nav id="nav">
-  <a class="nav-logo" href="#top">zahid<span>2021</span></a>
+  <a class="nav-logo" href="#top">Zahid <span>Mehmood</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -339,8 +901,9 @@ footer .accent { color: var(--accent); font-weight: 700; }
 </nav>
 
 <header class="hero" id="top">
+  <div class="hero-panel" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="hero-badge">Available for hire</div>
+    <div class="hero-badge"><i></i> Available for hire</div>
     <h1>Zahid Mehmood</h1>
     <p class="hero-role">Software Engineer · <strong>Python Backend &amp; AI</strong></p>
     <p class="hero-desc">
@@ -363,21 +926,21 @@ footer .accent { color: var(--accent); font-weight: 700; }
 </header>
 
 <section class="stats">
-  <div class="wrap stats-grid">
+  <div class="wrap stats-grid" id="statsGrid">
     <div>
-      <div class="stat-num">1+</div>
+      <div class="stat-num" data-count="1">0+</div>
       <div class="stat-label">Years Experience</div>
     </div>
     <div>
-      <div class="stat-num">30+</div>
+      <div class="stat-num" data-count="30">0+</div>
       <div class="stat-label">Production Scrapers</div>
     </div>
     <div>
-      <div class="stat-num">21+</div>
+      <div class="stat-num" data-count="21">0+</div>
       <div class="stat-label">Portfolio Projects</div>
     </div>
     <div>
-      <div class="stat-num">Live</div>
+      <div class="stat-num" data-live="1">Live</div>
       <div class="stat-label">AI Chatbot Deployed</div>
     </div>
   </div>
@@ -385,7 +948,7 @@ footer .accent { color: var(--accent); font-weight: 700; }
 
 <section id="about">
   <div class="wrap">
-    <div class="section-label">// about</div>
+    <div class="section-label">About</div>
     <h2 class="section-title">Professional <em>Summary</em></h2>
     <div class="about-grid">
       <div class="about-copy reveal">
@@ -403,23 +966,23 @@ footer .accent { color: var(--accent); font-weight: 700; }
           and lead management. Strong focus on clean architecture, JWT auth, OOP, and Git-based workflows.
         </p>
       </div>
-      <div class="info-cards reveal">
-        <div class="info-card">
+      <div class="info-cards">
+        <div class="info-card reveal reveal-delay-1">
           <div class="label">Current Role</div>
           <div class="value">Python Software Engineer</div>
           <div class="sub">Rixtysoft · Jan 2025 – Present</div>
         </div>
-        <div class="info-card">
+        <div class="info-card reveal reveal-delay-2">
           <div class="label">Education</div>
           <div class="value">BS Software Engineering</div>
           <div class="sub">Islamia University of Bahawalpur · 2021–2025</div>
         </div>
-        <div class="info-card">
+        <div class="info-card reveal reveal-delay-3">
           <div class="label">Location</div>
           <div class="value">Lahore, Pakistan</div>
           <div class="sub">Open to remote / freelance / full-time</div>
         </div>
-        <div class="info-card">
+        <div class="info-card reveal">
           <div class="label">Languages</div>
           <div class="value">English · Urdu</div>
         </div>
@@ -428,60 +991,24 @@ footer .accent { color: var(--accent); font-weight: 700; }
   </div>
 </section>
 
-<section id="skills" style="border-top:1px solid var(--border)">
+<section id="skills" style="background:rgba(255,255,255,0.35)">
   <div class="wrap">
-    <div class="section-label">// skills &amp; tools</div>
+    <div class="section-label">Skills &amp; Tools</div>
     <h2 class="section-title">What I <em>Build With</em></h2>
     <div class="skills-grid">
-      <div class="skill-card reveal">
-        <h3>Languages &amp; Backend</h3>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">REST APIs</span>
-          <span class="tag">Webhooks</span><span class="tag">Session Management</span><span class="tag">JWT</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
-        <h3>Web Scraping</h3>
-        <div class="tags">
-          <span class="tag">Scrapy</span><span class="tag">Selenium</span><span class="tag">Playwright</span>
-          <span class="tag">BeautifulSoup</span><span class="tag">Requests</span><span class="tag">Data Pipelines</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
-        <h3>AI / LLM</h3>
-        <div class="tags">
-          <span class="tag">Groq API</span><span class="tag">Llama 3.3</span><span class="tag">Prompt Engineering</span>
-          <span class="tag">AI Chatbots</span><span class="tag">Lead Qualification</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
-        <h3>Integrations</h3>
-        <div class="tags">
-          <span class="tag">Meta Graph API</span><span class="tag">Messenger</span><span class="tag">Instagram</span>
-          <span class="tag">Perfex CRM</span><span class="tag">SendPulse</span><span class="tag">Unipile</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
-        <h3>Databases</h3>
-        <div class="tags">
-          <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">UUID Dedup</span>
-          <span class="tag">pgAdmin</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
-        <h3>Tools &amp; Cloud</h3>
-        <div class="tags">
-          <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Render</span>
-          <span class="tag">PyCharm</span><span class="tag">VS Code</span><span class="tag">Cursor</span>
-        </div>
-      </div>
+      <div class="skill-card reveal"><h3>Languages &amp; Backend</h3><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">REST APIs</span><span class="tag">Webhooks</span><span class="tag">JWT</span></div></div>
+      <div class="skill-card reveal reveal-delay-1"><h3>Web Scraping</h3><div class="tags"><span class="tag">Scrapy</span><span class="tag">Selenium</span><span class="tag">Playwright</span><span class="tag">BeautifulSoup</span><span class="tag">Requests</span></div></div>
+      <div class="skill-card reveal reveal-delay-2"><h3>AI / LLM</h3><div class="tags"><span class="tag">Groq API</span><span class="tag">Llama 3.3</span><span class="tag">Prompt Engineering</span><span class="tag">AI Chatbots</span></div></div>
+      <div class="skill-card reveal"><h3>Integrations</h3><div class="tags"><span class="tag">Meta Graph API</span><span class="tag">Messenger</span><span class="tag">Instagram</span><span class="tag">Perfex CRM</span><span class="tag">SendPulse</span></div></div>
+      <div class="skill-card reveal reveal-delay-1"><h3>Databases</h3><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">UUID Dedup</span><span class="tag">pgAdmin</span></div></div>
+      <div class="skill-card reveal reveal-delay-2"><h3>Tools &amp; Cloud</h3><div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Render</span><span class="tag">PyCharm</span><span class="tag">Cursor</span></div></div>
     </div>
   </div>
 </section>
 
-<section id="experience" style="border-top:1px solid var(--border)">
+<section id="experience">
   <div class="wrap">
-    <div class="section-label">// experience</div>
+    <div class="section-label">Experience</div>
     <h2 class="section-title">Work <em>Experience</em></h2>
     <article class="exp-card reveal">
       <div class="exp-header">
@@ -504,9 +1031,9 @@ footer .accent { color: var(--accent); font-weight: 700; }
   </div>
 </section>
 
-<section id="projects" style="border-top:1px solid var(--border)">
+<section id="projects" style="background:rgba(255,255,255,0.35)">
   <div class="wrap">
-    <div class="section-label">// projects</div>
+    <div class="section-label">Projects</div>
     <h2 class="section-title">Selected <em>Work</em></h2>
 
     <a class="featured reveal" href="https://github.com/zahid2021/klozer" target="_blank" rel="noopener">
@@ -544,152 +1071,33 @@ footer .accent { color: var(--accent); font-weight: 700; }
     </div>
 
     <div class="projects-grid" id="projectsGrid">
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/federal" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>FERC eLibrary Document Scraper</h3>
-        <p>High-performance multi-threaded scraper for FERC eLibrary API with resume support, auto-retry, and 50+ structured fields.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">Multithreading</span><span class="tech-badge">REST</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/ohio-scraper" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Ohio Regulatory Scraper</h3>
-        <p>Production regulatory data extraction pipeline with structured outputs for large-scale Ohio filings coverage.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">Scraping</span><span class="tech-badge">CSV</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-renobern" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Swiss Job Scraper — Renobern</h3>
-        <p>Production-ready scraper for Renovation-Bern AG with LLM-powered parsing and MySQL storage.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">Scrapy</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-neba" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Swiss Job Scraper — NEBA Gruppe</h3>
-        <p>Group-wide scraper for NEBA and subsidiaries with structured job extraction across the corporate network.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Groq LLM</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-haeusermann" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Swiss Job Scraper — Haeusermann</h3>
-        <p>Extracts job listings from PDF files using pypdf and LLM parsing for legal-firm career documents.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">pypdf</span><span class="tech-badge">LLM</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-tanne" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Swiss Job Scraper — Tanne</h3>
-        <p>Selenium-based scraper with API integration for Tanne social institution career pages.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Selenium</span><span class="tech-badge">API</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-halter" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Swiss Job Scraper — Halter AG</h3>
-        <p>REST API-based scraper for Halter AG construction company job portal.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">REST API</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-jobagent" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Swiss Job Scraper — JobAgent</h3>
-        <p>Large-scale scraper for JobAgent.ch extracting commercial positions at volume.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-jobscout24" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Swiss Job Scraper — JobScout24</h3>
-        <p>High-volume scraper for JobScout24.ch, one of Switzerland’s largest job portals.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-jobup" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Swiss Job Scraper — JobUp</h3>
-        <p>Automated JobUp.ch scraper with structured extraction and deduplication logic.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Requests</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-schwarzag" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Swiss Job Scraper — Schwarz AG</h3>
-        <p>Construction career scraper with LLM-powered parsing for structured job data.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Groq LLM</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-wirth" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Swiss Job Scraper — Wirth AG</h3>
-        <p>Career page scraper with automated extraction and UUID-based deduplication.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Requests</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/swiss-companies-scraper" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Swiss Companies Scraper</h3>
-        <p>Large-scale company data scraper covering contacts, industry, and location fields.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Python</span><span class="tech-badge">Database</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/us-tax-preparers-scraper" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>US Tax Preparers Scraper</h3>
-        <p>Automated extraction of US tax preparer credentials, location, and contact details.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Requests</span><span class="tech-badge">Python</span><span class="tech-badge">CSV</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/cer-regdocs-scraper" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>CER RegDocs Scraper</h3>
-        <p>Regulatory documents scraper with automated extraction and structured storage pipeline.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">PDF</span><span class="tech-badge">Automation</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/fb-scraper" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
-        <h3>Facebook Page Scraper</h3>
-        <p>Selenium scraper for posts and comments with cookie login, auto-scroll, and CSV export.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Selenium</span><span class="tech-badge">Pandas</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="api" href="https://github.com/zahid2021/mini-bank-api" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype api">REST API</span><span class="arrow">↗</span></div>
-        <h3>Mini Bank REST API</h3>
-        <p>Banking API with FastAPI and PostgreSQL — clean architecture and secure authentication.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">FastAPI</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">JWT</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="api" href="https://github.com/zahid2021/jammer-backend" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype api">Backend</span><span class="arrow">↗</span></div>
-        <h3>Jammer Backend API</h3>
-        <p>E-commerce REST API with Auth, Products, Cart, Orders, Coupons, and Banners on FastAPI + MySQL.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">FastAPI</span><span class="tech-badge">MySQL</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="api" href="https://github.com/zahid2021/jammer-frontend" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype api">Frontend</span><span class="arrow">↗</span></div>
-        <h3>Jammer Frontend</h3>
-        <p>Modern frontend for the Jammer e-commerce stack with full backend API integration.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Frontend</span><span class="tech-badge">API</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
-
-      <a class="project-card reveal" data-type="ai" href="https://github.com/zahid2021/Chat-AI" target="_blank" rel="noopener">
-        <div class="project-top"><span class="ptype ai">AI</span><span class="arrow">↗</span></div>
-        <h3>Chat AI Application</h3>
-        <p>AI-powered chat app with LLM integration, real-time messaging, and modern backend architecture.</p>
-        <div class="project-foot"><div class="tech-row"><span class="tech-badge">LLM</span><span class="tech-badge">Python</span><span class="tech-badge">AI</span></div><span class="gh-label">GitHub →</span></div>
-      </a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/federal" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>FERC eLibrary Document Scraper</h3><p>High-performance multi-threaded scraper for FERC eLibrary API with resume support, auto-retry, and 50+ structured fields.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">Multithreading</span><span class="tech-badge">REST</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/ohio-scraper" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Ohio Regulatory Scraper</h3><p>Production regulatory data extraction pipeline with structured outputs for large-scale Ohio filings coverage.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">Scraping</span><span class="tech-badge">CSV</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-renobern" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Swiss Job Scraper — Renobern</h3><p>Production-ready scraper for Renovation-Bern AG with LLM-powered parsing and MySQL storage.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">Scrapy</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-neba" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Swiss Job Scraper — NEBA Gruppe</h3><p>Group-wide scraper for NEBA and subsidiaries with structured job extraction across the corporate network.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Groq LLM</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-haeusermann" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Swiss Job Scraper — Haeusermann</h3><p>Extracts job listings from PDF files using pypdf and LLM parsing for legal-firm career documents.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">pypdf</span><span class="tech-badge">LLM</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-tanne" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Swiss Job Scraper — Tanne</h3><p>Selenium-based scraper with API integration for Tanne social institution career pages.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Selenium</span><span class="tech-badge">API</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-halter" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Swiss Job Scraper — Halter AG</h3><p>REST API-based scraper for Halter AG construction company job portal.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">REST API</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-jobagent" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Swiss Job Scraper — JobAgent</h3><p>Large-scale scraper for JobAgent.ch extracting commercial positions at volume.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-jobscout24" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Swiss Job Scraper — JobScout24</h3><p>High-volume scraper for JobScout24.ch, one of Switzerland’s largest job portals.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-jobup" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Swiss Job Scraper — JobUp</h3><p>Automated JobUp.ch scraper with structured extraction and deduplication logic.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Requests</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-schwarzag" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Swiss Job Scraper — Schwarz AG</h3><p>Construction career scraper with LLM-powered parsing for structured job data.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Groq LLM</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-wirth" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Swiss Job Scraper — Wirth AG</h3><p>Career page scraper with automated extraction and UUID-based deduplication.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Requests</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/swiss-companies-scraper" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Swiss Companies Scraper</h3><p>Large-scale company data scraper covering contacts, industry, and location fields.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Python</span><span class="tech-badge">Database</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/us-tax-preparers-scraper" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>US Tax Preparers Scraper</h3><p>Automated extraction of US tax preparer credentials, location, and contact details.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Requests</span><span class="tech-badge">Python</span><span class="tech-badge">CSV</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/cer-regdocs-scraper" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>CER RegDocs Scraper</h3><p>Regulatory documents scraper with automated extraction and structured storage pipeline.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">PDF</span><span class="tech-badge">Automation</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/fb-scraper" target="_blank" rel="noopener"><div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div><h3>Facebook Page Scraper</h3><p>Selenium scraper for posts and comments with cookie login, auto-scroll, and CSV export.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Selenium</span><span class="tech-badge">Pandas</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="api" href="https://github.com/zahid2021/mini-bank-api" target="_blank" rel="noopener"><div class="project-top"><span class="ptype api">REST API</span><span class="arrow">↗</span></div><h3>Mini Bank REST API</h3><p>Banking API with FastAPI and PostgreSQL — clean architecture and secure authentication.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">FastAPI</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">JWT</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="api" href="https://github.com/zahid2021/jammer-backend" target="_blank" rel="noopener"><div class="project-top"><span class="ptype api">Backend</span><span class="arrow">↗</span></div><h3>Jammer Backend API</h3><p>E-commerce REST API with Auth, Products, Cart, Orders, Coupons, and Banners on FastAPI + MySQL.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">FastAPI</span><span class="tech-badge">MySQL</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="api" href="https://github.com/zahid2021/jammer-frontend" target="_blank" rel="noopener"><div class="project-top"><span class="ptype api">Frontend</span><span class="arrow">↗</span></div><h3>Jammer Frontend</h3><p>Modern frontend for the Jammer e-commerce stack with full backend API integration.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">Frontend</span><span class="tech-badge">API</span></div><span class="gh-label">GitHub →</span></div></a>
+      <a class="project-card reveal" data-type="ai" href="https://github.com/zahid2021/Chat-AI" target="_blank" rel="noopener"><div class="project-top"><span class="ptype ai">AI</span><span class="arrow">↗</span></div><h3>Chat AI Application</h3><p>AI-powered chat app with LLM integration, real-time messaging, and modern backend architecture.</p><div class="project-foot"><div class="tech-row"><span class="tech-badge">LLM</span><span class="tech-badge">Python</span><span class="tech-badge">AI</span></div><span class="gh-label">GitHub →</span></div></a>
     </div>
   </div>
 </section>
 
-<section id="education" style="border-top:1px solid var(--border)">
+<section id="education">
   <div class="wrap">
-    <div class="section-label">// education</div>
+    <div class="section-label">Education</div>
     <h2 class="section-title">Academic <em>Background</em></h2>
     <div class="edu-card reveal">
       <div>
@@ -701,10 +1109,10 @@ footer .accent { color: var(--accent); font-weight: 700; }
   </div>
 </section>
 
-<section id="contact" style="border-top:1px solid var(--border)">
+<section id="contact">
   <div class="wrap">
     <div class="contact-panel reveal">
-      <div class="section-label" style="text-align:center">// contact</div>
+      <div class="section-label">Contact</div>
       <h2>Let’s build something solid</h2>
       <p>
         Looking for a Python engineer for FastAPI backends, AI chatbots, CRM automation, or production scrapers?
@@ -728,18 +1136,24 @@ footer .accent { color: var(--accent); font-weight: 700; }
 
 <script>
 (function () {
-  const nav = document.getElementById('nav');
-  const toggle = document.getElementById('navToggle');
+  var nav = document.getElementById('nav');
+  var toggle = document.getElementById('navToggle');
+
   toggle.addEventListener('click', function () {
     nav.classList.toggle('open');
     toggle.textContent = nav.classList.contains('open') ? '✕' : '☰';
   });
+
   nav.querySelectorAll('.nav-links a').forEach(function (link) {
     link.addEventListener('click', function () {
       nav.classList.remove('open');
       toggle.textContent = '☰';
     });
   });
+
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  }, { passive: true });
 
   document.querySelectorAll('.filter-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -753,15 +1167,41 @@ footer .accent { color: var(--accent); font-weight: 700; }
     });
   });
 
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry, i) {
-      if (entry.isIntersecting) {
-        setTimeout(function () { entry.target.classList.add('visible'); }, i * 40);
-        observer.unobserve(entry.target);
-      }
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+  }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
+
+  var statsAnimated = false;
+  var statsObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting || statsAnimated) return;
+      statsAnimated = true;
+      var items = entry.target.children;
+      Array.prototype.forEach.call(items, function (item, i) {
+        setTimeout(function () { item.classList.add('show'); }, i * 120);
+      });
+      entry.target.querySelectorAll('.stat-num[data-count]').forEach(function (el) {
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var start = 0;
+        var duration = 1100;
+        var t0 = performance.now();
+        function tick(now) {
+          var p = Math.min(1, (now - t0) / duration);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(start + (target - start) * eased) + '+';
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+      statsObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+  statsObserver.observe(document.getElementById('statsGrid'));
 })();
 </script>
 </body>
