@@ -20,7 +20,7 @@
   --mute: #5f6f86;
   --line: rgba(21, 32, 51, 0.1);
   --bg: #d9e4f0;
-  --surface: rgba(255, 255, 255, 0.78);
+  --surface: #ffffff;
   --card: #ffffff;
   --teal: #0f766e;
   --teal-2: #0d9488;
@@ -30,8 +30,8 @@
   --navy: #0f1c2e;
   --max: 1120px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --shadow: 0 18px 40px rgba(21, 32, 51, 0.08);
-  --shadow-hover: 0 26px 55px rgba(37, 99, 235, 0.14);
+  --shadow: 0 18px 40px rgba(21, 32, 51, 0.12);
+  --shadow-hover: 0 26px 55px rgba(37, 99, 235, 0.18);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -239,8 +239,8 @@ nav.scrolled {
 .stats { position: relative; z-index: 2; margin-top: -34px; margin-bottom: 20px; }
 .stats-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
-  background: rgba(255,255,255,.88); backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,.7); border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid var(--line); border-radius: 22px;
   padding: 24px 12px; box-shadow: var(--shadow);
   transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
 }
@@ -278,8 +278,8 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
 .section-title em { font-style: italic; color: var(--teal); font-weight: 600; }
 
 .panel {
-  background: var(--surface); border: 1px solid rgba(255,255,255,.8);
-  backdrop-filter: blur(12px); border-radius: 24px; padding: clamp(24px, 4vw, 36px);
+  background: #ffffff; border: 1px solid var(--line);
+  border-radius: 24px; padding: clamp(24px, 4vw, 36px);
   box-shadow: var(--shadow);
   transition: border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
 }
@@ -432,7 +432,7 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
 
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
 .filter-btn {
-  border: 1px solid var(--line); background: rgba(255,255,255,.75); color: var(--mute);
+  border: 1px solid var(--line); background: #ffffff; color: var(--mute);
   padding: 8px 14px; border-radius: 999px; font: inherit; font-size: .76rem;
   font-weight: 700; cursor: pointer; transition: .25s;
 }
