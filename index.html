@@ -242,6 +242,11 @@ nav.scrolled {
   background: rgba(255,255,255,.88); backdrop-filter: blur(14px);
   border: 1px solid rgba(255,255,255,.7); border-radius: 22px;
   padding: 24px 12px; box-shadow: var(--shadow);
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.stats-grid:hover {
+  border-color: rgba(15, 118, 110, 0.45);
+  box-shadow: 0 18px 40px rgba(15, 118, 110, 0.1);
 }
 .stats-grid > div {
   text-align: center; opacity: 0; transform: translateY(14px);
@@ -276,6 +281,11 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
   background: var(--surface); border: 1px solid rgba(255,255,255,.8);
   backdrop-filter: blur(12px); border-radius: 24px; padding: clamp(24px, 4vw, 36px);
   box-shadow: var(--shadow);
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
+}
+.panel:hover {
+  border-color: rgba(15, 118, 110, 0.45);
+  box-shadow: 0 18px 40px rgba(15, 118, 110, 0.1);
 }
 
 .about-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; }
@@ -287,7 +297,8 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
   padding: 16px 18px; transition: transform .35s var(--ease), box-shadow .35s, border-color .35s;
 }
 .info-card:hover {
-  transform: translateY(-4px); border-color: rgba(15,118,110,.25);
+  transform: translateY(-4px);
+  border-color: rgba(15, 118, 110, 0.5);
   box-shadow: var(--shadow-hover);
 }
 .info-card .label {
@@ -311,7 +322,8 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
   transform: scaleY(0); transform-origin: top; transition: transform .4s var(--ease);
 }
 .skill-card:hover {
-  transform: translateY(-6px); border-color: rgba(15,118,110,.22);
+  transform: translateY(-6px);
+  border-color: rgba(15, 118, 110, 0.5);
   box-shadow: var(--shadow-hover);
 }
 .skill-card:hover::after { transform: scaleY(1); }
@@ -325,6 +337,11 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
 .exp-card {
   background: var(--card); border: 1px solid var(--line); border-radius: 22px;
   padding: clamp(24px, 4vw, 36px); box-shadow: var(--shadow); position: relative; overflow: hidden;
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.exp-card:hover {
+  border-color: rgba(15, 118, 110, 0.5);
+  box-shadow: var(--shadow-hover);
 }
 .exp-card::before {
   content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
@@ -438,7 +455,8 @@ section { position: relative; z-index: 1; padding: clamp(64px, 9vw, 100px) 0; }
   transition: left .65s var(--ease);
 }
 .project-card:hover {
-  transform: translateY(-7px); border-color: rgba(15,118,110,.25);
+  transform: translateY(-7px);
+  border-color: rgba(15, 118, 110, 0.5);
   box-shadow: var(--shadow-hover);
 }
 .project-card:hover::before { left: 130%; }
