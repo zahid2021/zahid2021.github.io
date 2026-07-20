@@ -4,148 +4,1194 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zahid Ali | Python Developer & Web Scraping Expert</title>
-
-  <meta property="og:title" content="Zahid Ali | Python Developer & Web Scraping Expert">
-  <meta property="og:description" content="Python Backend Developer specializing in web scraping, REST APIs, FastAPI, AI chatbots, CRM automation and LLM integration. 21+ production-ready projects.">
-  <meta property="og:image" content="https://zahid2021.github.io/preview.png">
-  <meta property="og:url" content="https://zahid2021.github.io">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Zahid Mehmood | Software Engineer</title>
+<meta name="description" content="Python Software Engineer specializing in FastAPI backends, AI chatbots, CRM automation, and production web scraping. Based in Lahore, Pakistan.">
+<meta property="og:title" content="Zahid Mehmood | Software Engineer">
+<meta property="og:description" content="Python Software Engineer — FastAPI, AI chatbots, CRM automation, web scraping. 1+ year at Rixtysoft. Portfolio of production systems.">
+<meta property="og:image" content="https://zahid2021.github.io/preview.png">
+<meta property="og:url" content="https://zahid2021.github.io">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0f;--border:#1e1e2e;--accent:#00ff88;--accent2:#0088ff;--text:#e8e8f0;--muted:#666680;--card:#13131a}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;overflow-x:hidden}
-body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,136,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
-nav{position:fixed;top:0;width:100%;z-index:100;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;color:var(--accent)}
-.nav-links{display:flex;gap:40px}.nav-links a{color:var(--muted);text-decoration:none;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}.nav-links a:hover{color:var(--accent)}
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative;z-index:1}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.2);color:var(--accent);padding:6px 16px;border-radius:100px;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:32px}
-.hero-tag::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,7vw,6rem);font-weight:800;line-height:1.0;letter-spacing:-0.03em;margin-bottom:24px}
-.highlight{color:transparent;-webkit-text-stroke:2px var(--accent)}
-.highlight2{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-desc{font-size:1rem;color:var(--muted);max-width:600px;line-height:1.8;margin-bottom:48px}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
-.btn-primary{background:var(--accent);color:#000;padding:14px 32px;border-radius:6px;text-decoration:none;font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;transition:all 0.2s}
-.btn-primary:hover{background:#00cc6a;transform:translateY(-2px)}
-.btn-secondary{border:1px solid var(--border);color:var(--text);padding:14px 32px;border-radius:6px;text-decoration:none;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;transition:all 0.2s}
-.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
-.stats{padding:60px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr);gap:40px;position:relative;z-index:1}
-.stat-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:8px}
-.stat-label{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em}
-section{padding:100px 60px;position:relative;z-index:1}
-.section-tag{font-size:0.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.2em;margin-bottom:16px}
-.section-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:60px;line-height:1.1}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.skill-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px;transition:all 0.3s;position:relative;overflow:hidden}
-.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transition:transform 0.3s}
-.skill-card:hover::before{transform:scaleX(1)}.skill-card:hover{border-color:rgba(0,255,136,0.3);transform:translateY(-4px)}
-.skill-icon{font-size:2rem;margin-bottom:16px}
-.skill-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:12px}
-.skill-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.skill-tag{background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.15);color:var(--accent);padding:4px 10px;border-radius:4px;font-size:0.7rem}
-.projects-filter{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
-.filter-btn{background:transparent;border:1px solid var(--border);color:var(--muted);padding:8px 20px;border-radius:100px;font-family:'DM Mono',monospace;font-size:0.75rem;cursor:pointer;transition:all 0.2s}
-.filter-btn:hover,.filter-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(0,255,136,0.08)}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
-.project-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;transition:all 0.3s;display:flex;flex-direction:column;gap:16px}
-.project-card:hover{border-color:rgba(0,255,136,0.3);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.4)}
-.project-header{display:flex;justify-content:space-between;align-items:flex-start}
-.project-type{font-size:0.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.15em;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.15);padding:3px 10px;border-radius:4px}
-.project-type.api{color:var(--accent2);background:rgba(0,136,255,0.08);border-color:rgba(0,136,255,0.15)}
-.project-type.ai{color:#ff88ff;background:rgba(255,136,255,0.08);border-color:rgba(255,136,255,0.15)}
-.project-link{color:var(--muted);text-decoration:none;font-size:1rem;transition:color 0.2s}.project-link:hover{color:var(--accent)}
-.project-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;line-height:1.3}
-.project-desc{font-size:0.78rem;color:var(--muted);line-height:1.7;flex:1}
-.project-footer{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--border)}
-.project-tech{display:flex;gap:6px;flex-wrap:wrap}
-.tech-badge{font-size:0.65rem;color:var(--muted);background:rgba(255,255,255,0.04);padding:3px 8px;border-radius:3px;border:1px solid var(--border)}
-.github-link{color:var(--muted);text-decoration:none;font-size:0.75rem;transition:color 0.2s;white-space:nowrap}.github-link:hover{color:var(--accent)}
-.contact-wrapper{max-width:700px;margin:0 auto;text-align:center}
-.contact-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:60px;margin-top:40px}
-.contact-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:32px}
-.contact-link{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--text);padding:14px 24px;border-radius:8px;text-decoration:none;font-size:0.85rem;transition:all 0.2s}
-.contact-link:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-footer{padding:40px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
-footer p{font-size:0.75rem;color:var(--muted)}
-.fade-in{opacity:0;transform:translateY(30px);transition:all 0.6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){nav{padding:16px 24px}.nav-links{display:none}.hero{padding:100px 24px 60px}.stats{grid-template-columns:repeat(2,1fr);padding:40px 24px}section{padding:60px 24px}footer{padding:30px 24px;flex-direction:column;gap:12px;text-align:center}}
+:root {
+  --bg: #07090c;
+  --bg-elevated: #0e1218;
+  --card: #121820;
+  --border: #1c2533;
+  --border-hover: #2a3a52;
+  --text: #e8edf5;
+  --muted: #8b97a8;
+  --accent: #3ecf8e;
+  --accent-dim: rgba(62, 207, 142, 0.12);
+  --accent-border: rgba(62, 207, 142, 0.28);
+  --blue: #5b9fff;
+  --blue-dim: rgba(91, 159, 255, 0.12);
+  --radius: 14px;
+  --max: 1120px;
+  --nav-h: 68px;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(62, 207, 142, 0.08), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 0%, rgba(91, 159, 255, 0.06), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* Nav */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-h);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 5vw, 48px);
+  background: rgba(7, 9, 12, 0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--text);
+}
+.nav-logo span { color: var(--accent); }
+.nav-links {
+  display: flex;
+  gap: clamp(18px, 3vw, 32px);
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #04140c;
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: transform 0.2s, background 0.2s;
+}
+.nav-cta:hover { background: #4de09d; transform: translateY(-1px); }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Layout */
+.wrap {
+  width: min(100% - 40px, var(--max));
+  margin-inline: auto;
+}
+section {
+  position: relative;
+  z-index: 1;
+  padding: clamp(64px, 10vw, 110px) 0;
+}
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+.section-title em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--nav-h) + 24px);
+  padding-bottom: 64px;
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.hero h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.6rem, 8vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin-bottom: 12px;
+}
+.hero-role {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.15rem, 3vw, 1.55rem);
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.hero-role strong { color: var(--accent); font-weight: 700; }
+.hero-desc {
+  max-width: 640px;
+  color: var(--muted);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-bottom: 36px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.hero-meta a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-hover);
+  transition: color 0.2s, border-color 0.2s;
+}
+.hero-meta a:hover { color: var(--accent); border-color: var(--accent); }
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 13px 24px;
+  border-radius: 9px;
+  transition: transform 0.2s, background 0.2s, border-color 0.2s, color 0.2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--accent); color: #04140c; }
+.btn-primary:hover { background: #4de09d; }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Stats strip */
+.stats {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elevated);
+  padding: 36px 0;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.stat-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* About */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(28px, 5vw, 56px);
+  align-items: start;
+}
+.about-copy p {
+  color: var(--muted);
+  margin-bottom: 18px;
+  font-size: 0.92rem;
+  line-height: 1.85;
+}
+.about-copy strong { color: var(--text); font-weight: 500; }
+.info-cards { display: flex; flex-direction: column; gap: 12px; }
+.info-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+.info-card .label {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.info-card .value {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.info-card .sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.skill-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.skill-card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-3px);
+}
+.skill-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  font-size: 0.68rem;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Experience */
+.exp-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 2px);
+  padding: clamp(24px, 4vw, 36px);
+}
+.exp-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.exp-header h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.exp-company { color: var(--accent); font-size: 0.9rem; margin-bottom: 4px; }
+.exp-dates {
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.exp-list {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+.exp-list li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+.exp-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Featured project */
+.featured {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 4px);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  margin-bottom: 40px;
+}
+.featured:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+.featured-body { padding: clamp(24px, 4vw, 40px); }
+.featured-eyebrow {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.featured h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.featured p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.featured-side {
+  background:
+    linear-gradient(160deg, rgba(62, 207, 142, 0.16), transparent 55%),
+    linear-gradient(200deg, rgba(91, 159, 255, 0.1), transparent 50%),
+    var(--bg-elevated);
+  border-left: 1px solid var(--border);
+  padding: clamp(24px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+.featured-side .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.78rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+.featured-side .row:last-child { border-bottom: none; padding-bottom: 0; }
+.featured-side .k { color: var(--muted); }
+.featured-side .v { color: var(--text); text-align: right; font-weight: 500; }
+.featured-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--accent);
+}
+
+/* Projects filter + grid */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  min-height: 100%;
+}
+.project-card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
+}
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+.ptype {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 4px;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+}
+.ptype.api {
+  color: var(--blue);
+  background: var(--blue-dim);
+  border-color: rgba(91, 159, 255, 0.28);
+}
+.ptype.ai {
+  color: #c9a6ff;
+  background: rgba(201, 166, 255, 0.1);
+  border-color: rgba(201, 166, 255, 0.28);
+}
+.arrow {
+  color: var(--muted);
+  font-size: 1rem;
+  transition: color 0.2s, transform 0.2s;
+}
+.project-card:hover .arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+.project-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.project-card p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.7;
+  flex: 1;
+}
+.project-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.tech-badge {
+  font-size: 0.62rem;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.tech-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.gh-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.project-card:hover .gh-label { color: var(--accent); }
+
+/* Education */
+.edu-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+.edu-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.edu-card p { color: var(--muted); font-size: 0.88rem; }
+.edu-years {
+  font-size: 0.8rem;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+
+/* Contact */
+.contact-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 4px);
+  padding: clamp(28px, 5vw, 48px);
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.contact-panel h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.contact-panel > p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  line-height: 1.75;
+}
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.contact-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 28px clamp(20px, 5vw, 48px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+footer .accent { color: var(--accent); }
+
+/* Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .about-grid,
+  .featured { grid-template-columns: 1fr; }
+  .featured-side { border-left: none; border-top: 1px solid var(--border); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-cta { display: none; }
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  nav.open .nav-links {
+    display: flex;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(7, 9, 12, 0.98);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px 20px;
+  }
+  nav.open .nav-links a {
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+  nav.open .nav-cta {
+    display: inline-flex;
+    position: absolute;
+    top: calc(var(--nav-h) + 210px);
+    left: 20px;
+    right: 20px;
+    justify-content: center;
+  }
+  .hero { min-height: auto; padding-top: calc(var(--nav-h) + 40px); }
+}
+@media (max-width: 480px) {
+  .wrap { width: min(100% - 28px, var(--max)); }
+  .stats-grid { gap: 18px; }
+  .hero-actions .btn { width: 100%; }
+}
 </style>
 </head>
 <body>
-<nav><div class="nav-logo">zahid2021</div><div class="nav-links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></nav>
-<section class="hero"><div><div class="hero-tag">Available for hire</div><h1>Python<br><span class="highlight">Backend</span><br><span class="highlight2">Developer</span></h1><p class="hero-desc">Specializing in web scraping, REST API development, AI chatbots, and CRM automation. Production-ready scrapers, FastAPI backends, MySQL and LLM integration.</p><div class="hero-btns"><a href="#projects" class="btn-primary">View Projects</a><a href="#contact" class="btn-secondary">Get In Touch</a></div></div></section>
-<section id="about" style="border-top:1px solid var(--border)">
-  <div class="section-tag">// about me</div>
-  <h2 class="section-title">About <span style="color:var(--accent)">Me</span></h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
-    <div>
-      <p style="font-size:0.9rem;color:var(--muted);line-height:1.9;margin-bottom:24px">
-        I am <strong style="color:var(--text)">Zahid Ali</strong>, a Python Backend Developer based in 
-        <strong style="color:var(--accent)">Lahore, Pakistan</strong>. I specialize in web scraping, 
-        REST API development, and database-driven applications.
-      </p>
-      <p style="font-size:0.9rem;color:var(--muted);line-height:1.9;margin-bottom:24px">
-        Currently working at <strong style="color:var(--text)">Rixtysoft</strong> as a Python Developer 
-        with 1+ year of experience building production-ready scrapers, FastAPI backends, and LLM-powered 
-        data extraction pipelines.
-      </p>
-      <p style="font-size:0.9rem;color:var(--muted);line-height:1.9">
-        Background in <strong style="color:var(--text)">Software Engineering</strong>. 
-        Fluent in <strong style="color:var(--text)">English</strong> and <strong style="color:var(--text)">Urdu</strong>.
-      </p>
+<nav id="nav">
+  <a class="nav-logo" href="#top">zahid<span>2021</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:zahid20mehmood@gmail.com">Hire Me</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-badge">Available for hire</div>
+    <h1>Zahid Mehmood</h1>
+    <p class="hero-role">Software Engineer · <strong>Python Backend &amp; AI</strong></p>
+    <p class="hero-desc">
+      Results-driven Python Software Engineer with 1+ year at Rixtysoft. I build production FastAPI backends,
+      multi-channel AI chatbots, CRM automation, and large-scale web scraping systems that solve real business problems.
+    </p>
+    <div class="hero-meta">
+      <span>Lahore, Pakistan</span>
+      <a href="tel:+923017941843">+92 301 7941843</a>
+      <a href="mailto:zahid20mehmood@gmail.com">zahid20mehmood@gmail.com</a>
+      <a href="https://www.linkedin.com/in/zahid-ali-1a1a4a358" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/zahid2021" target="_blank" rel="noopener">GitHub</a>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px">
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px">
-        <div style="font-size:0.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">Current Role</div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700">Python Developer</div>
-        <div style="font-size:0.8rem;color:var(--muted);margin-top:4px">Rixtysoft · 1+ Year</div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-ghost" href="https://github.com/zahid2021/klozer" target="_blank" rel="noopener">Featured: Klozer</a>
+      <a class="btn btn-ghost" href="#contact">Get In Touch</a>
+    </div>
+  </div>
+</header>
+
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div>
+      <div class="stat-num">1+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div>
+      <div class="stat-num">30+</div>
+      <div class="stat-label">Production Scrapers</div>
+    </div>
+    <div>
+      <div class="stat-num">21+</div>
+      <div class="stat-label">Portfolio Projects</div>
+    </div>
+    <div>
+      <div class="stat-num">Live</div>
+      <div class="stat-label">AI Chatbot Deployed</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-label">// about</div>
+    <h2 class="section-title">Professional <em>Summary</em></h2>
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>
+          I am <strong>Zahid Mehmood</strong>, a Python Software Engineer based in <strong>Lahore, Pakistan</strong>.
+          I specialize in backend development, AI-powered applications, web scraping, and REST API development.
+        </p>
+        <p>
+          Experienced in building production-grade data extraction systems, scalable FastAPI applications, and
+          multi-channel AI chatbot solutions using Python, FastAPI, Scrapy, Selenium, Playwright, PostgreSQL, and MySQL.
+        </p>
+        <p>
+          Proficient in designing RESTful APIs and integrating <strong>Groq LLM</strong>, <strong>Meta Graph API</strong>,
+          <strong>Perfex CRM</strong>, <strong>SendPulse</strong>, and other third-party APIs to automate business workflows
+          and lead management. Strong focus on clean architecture, JWT auth, OOP, and Git-based workflows.
+        </p>
       </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px">
-        <div style="font-size:0.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">Education</div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700">Software Engineering</div>
-      </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px">
-        <div style="font-size:0.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">Location</div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700">Lahore, Pakistan</div>
-      </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px">
-        <div style="font-size:0.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">Languages</div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700">English · Urdu</div>
+      <div class="info-cards reveal">
+        <div class="info-card">
+          <div class="label">Current Role</div>
+          <div class="value">Python Software Engineer</div>
+          <div class="sub">Rixtysoft · Jan 2025 – Present</div>
+        </div>
+        <div class="info-card">
+          <div class="label">Education</div>
+          <div class="value">BS Software Engineering</div>
+          <div class="sub">Islamia University of Bahawalpur · 2021–2025</div>
+        </div>
+        <div class="info-card">
+          <div class="label">Location</div>
+          <div class="value">Lahore, Pakistan</div>
+          <div class="sub">Open to remote / freelance / full-time</div>
+        </div>
+        <div class="info-card">
+          <div class="label">Languages</div>
+          <div class="value">English · Urdu</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<section id="skills"><div class="section-tag">// expertise</div><h2 class="section-title">What I <span style="color:var(--accent)">Build</span></h2><div class="skills-grid"><div class="skill-card"><div class="skill-icon">🕷️</div><div class="skill-title">Web Scraping</div><p style="font-size:0.8rem;color:var(--muted);line-height:1.7">Production-ready scrapers with duplicate prevention, LLM parsing, and direct database storage.</p><div class="skill-tags"><span class="skill-tag">Scrapy</span><span class="skill-tag">Selenium</span><span class="skill-tag">Playwright</span><span class="skill-tag">BeautifulSoup</span><span class="skill-tag">Requests</span><span class="skill-tag">Debugging</span><span class="skill-tag">Git</span><span class="skill-tag">PostgreSQL</span></div></div><div class="skill-card"><div class="skill-icon">⚡</div><div class="skill-title">REST API Development</div><p style="font-size:0.8rem;color:var(--muted);line-height:1.7">Scalable RESTful APIs with clean architecture, authentication, and database integration.</p><div class="skill-tags"><span class="skill-tag">FastAPI</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">REST</span></div></div><div class="skill-card"><div class="skill-icon">🤖</div><div class="skill-title">LLM Integration</div><p style="font-size:0.8rem;color:var(--muted);line-height:1.7">Integrating AI models for chatbots, lead qualification, CRM sync, and structured data extraction from websites and PDFs.</p><div class="skill-tags"><span class="skill-tag">Groq API</span><span class="skill-tag">AI Chatbots</span><span class="skill-tag">CRM Automation</span><span class="skill-tag">LLM Parsing</span></div></div><div class="skill-card"><div class="skill-icon">🗄️</div><div class="skill-title">Database Engineering</div><p style="font-size:0.8rem;color:var(--muted);line-height:1.7">Designing and managing relational databases with optimized queries and data pipelines.</p><div class="skill-tags"><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Data Pipelines</span><span class="skill-tag">PostgreSQL</span></div></div><div class="skill-card fade-in"><div class="skill-icon">🔧</div><div class="skill-title">Dev Tools & Debugging</div><p style="font-size:0.8rem;color:var(--muted);line-height:1.7">Proficient in debugging complex issues, version control, and maintaining clean production-ready codebases.</p><div class="skill-tags"><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">Debugging</span><span class="skill-tag">VS Code</span><span class="skill-tag">PyCharm</span></div></div></div></section>
-<section id="projects" style="border-top:1px solid var(--border)"><div class="section-tag">// portfolio</div><h2 class="section-title">All <span style="color:var(--accent)">Projects</span></h2><div class="projects-filter"><button class="filter-btn active" onclick="filterProjects('all',this)">All (21)</button><button class="filter-btn" onclick="filterProjects('scraper',this)">Web Scrapers</button><button class="filter-btn" onclick="filterProjects('api',this)">APIs</button><button class="filter-btn" onclick="filterProjects('ai',this)">AI Projects</button></div><div class="projects-grid">
-<div class="project-card fade-in" data-type="ai"><div class="project-header"><span class="project-type ai">AI</span><a href="https://github.com/zahid2021/klozer" target="_blank" class="project-link">↗</a></div><div class="project-title">Klozer — AI Sales Chatbot</div><div class="project-desc">Production AI sales qualification chatbot for SalesMonster.AI. Website widget, Facebook Messenger + Instagram DMs, auto lead sync to Perfex CRM and SendPulse CRM/email automation. Deployed on Render.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">FastAPI</span><span class="tech-badge">Groq LLM</span><span class="tech-badge">CRM</span><span class="tech-badge">Meta API</span></div><a href="https://github.com/zahid2021/klozer" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/scraper-renobern" target="_blank" class="project-link">↗</a></div><div class="project-title">Swiss Job Scraper — Renobern</div><div class="project-desc">Production-ready scraper for Renovation-Bern AG with LLM-powered parsing and MySQL storage.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Scrapy</span><span class="tech-badge">MySQL</span></div><a href="https://github.com/zahid2021/scraper-renobern" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/scraper-neba" target="_blank" class="project-link">↗</a></div><div class="project-title">Swiss Job Scraper — NEBA Gruppe</div><div class="project-desc">Scraper for NEBA Gruppe and 6 subsidiaries. Extracts structured job data across entire corporate group.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Scrapy</span><span class="tech-badge">Groq LLM</span></div><a href="https://github.com/zahid2021/scraper-neba" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/scraper-haeusermann" target="_blank" class="project-link">↗</a></div><div class="project-title">Swiss Job Scraper — Haeusermann</div><div class="project-desc">Extracts job listings from PDF files using pypdf and LLM parsing for legal firm documents.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">pypdf</span><span class="tech-badge">LLM</span><span class="tech-badge">MySQL</span></div><a href="https://github.com/zahid2021/scraper-haeusermann" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/scraper-tanne" target="_blank" class="project-link">↗</a></div><div class="project-title">Swiss Job Scraper — Tanne</div><div class="project-desc">Selenium-based scraper for Tanne social institution with API integration and automated data extraction.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Selenium</span><span class="tech-badge">API</span><span class="tech-badge">Python</span></div><a href="https://github.com/zahid2021/scraper-tanne" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/scraper-halter" target="_blank" class="project-link">↗</a></div><div class="project-title">Swiss Job Scraper — Halter AG</div><div class="project-desc">REST API-based scraper for Halter AG construction company job portal.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">REST API</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><a href="https://github.com/zahid2021/scraper-halter" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/scraper-jobagent" target="_blank" class="project-link">↗</a></div><div class="project-title">Swiss Job Scraper — JobAgent</div><div class="project-desc">Large-scale scraper for JobAgent.ch Swiss job portal extracting commercial positions.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Scrapy</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><a href="https://github.com/zahid2021/scraper-jobagent" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/scraper-jobscout24" target="_blank" class="project-link">↗</a></div><div class="project-title">Swiss Job Scraper — JobScout24</div><div class="project-desc">High-volume scraper for JobScout24.ch, one of Switzerland's largest job portals.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Scrapy</span><span class="tech-badge">MySQL</span></div><a href="https://github.com/zahid2021/scraper-jobscout24" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/scraper-jobup" target="_blank" class="project-link">↗</a></div><div class="project-title">Swiss Job Scraper — JobUp</div><div class="project-desc">Automated scraper for JobUp.ch with structured data extraction and deduplication logic.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Requests</span><span class="tech-badge">MySQL</span></div><a href="https://github.com/zahid2021/scraper-jobup" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/scraper-schwarzag" target="_blank" class="project-link">↗</a></div><div class="project-title">Swiss Job Scraper — Schwarz AG</div><div class="project-desc">Job scraper for Schwarz AG construction company with LLM-powered parsing pipeline.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Scrapy</span><span class="tech-badge">Groq LLM</span></div><a href="https://github.com/zahid2021/scraper-schwarzag" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/scraper-wirth" target="_blank" class="project-link">↗</a></div><div class="project-title">Swiss Job Scraper — Wirth AG</div><div class="project-desc">Career page scraper for Wirth AG with automated job data extraction and UUID deduplication.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Requests</span><span class="tech-badge">MySQL</span></div><a href="https://github.com/zahid2021/scraper-wirth" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/swiss-companies-scraper" target="_blank" class="project-link">↗</a></div><div class="project-title">Swiss Companies Scraper</div><div class="project-desc">Large-scale scraper for Swiss company data including contact info, industry, and location.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Scrapy</span><span class="tech-badge">Database</span></div><a href="https://github.com/zahid2021/swiss-companies-scraper" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/us-tax-preparers-scraper" target="_blank" class="project-link">↗</a></div><div class="project-title">US Tax Preparers Scraper</div><div class="project-desc">Automated scraper for US tax preparers including credentials, location, and contact info.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Requests</span><span class="tech-badge">Data Export</span></div><a href="https://github.com/zahid2021/us-tax-preparers-scraper" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/cer-regdocs-scraper" target="_blank" class="project-link">↗</a></div><div class="project-title">CER RegDocs Scraper</div><div class="project-desc">Regulatory documents scraper with automated extraction and structured storage pipeline.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">PDF</span><span class="tech-badge">Automation</span></div><a href="https://github.com/zahid2021/cer-regdocs-scraper" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/federal" target="_blank" class="project-link">↗</a></div><div class="project-title">FERC eLibrary Document Scraper</div><div class="project-desc">High-performance multi-threaded scraper for FERC eLibrary API. Fetches document metadata and file lists using accession numbers with resume support and auto-retry.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Multithreading</span><span class="tech-badge">REST API</span></div><a href="https://github.com/zahid2021/federal" target="_blank" class="github-link">GitHub →</a></div></div><div class="project-card fade-in" data-type="scraper"><div class="project-header"><span class="project-type">Scraper</span><a href="https://github.com/zahid2021/fb-scraper" target="_blank" class="project-link">↗</a></div><div class="project-title">Facebook Page Scraper</div><div class="project-desc">Selenium-based scraper that extracts posts and comments from Facebook pages using cookie-based login with auto-scroll and CSV export.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Selenium</span><span class="tech-badge">Pandas</span></div><a href="https://github.com/zahid2021/fb-scraper" target="_blank" class="github-link">GitHub →</a></div></div><div class="project-card fade-in" data-type="api"><div class="project-header"><span class="project-type api">REST API</span><a href="https://github.com/zahid2021/mini-bank-api" target="_blank" class="project-link">↗</a></div><div class="project-title">Mini Bank REST API</div><div class="project-desc">Full-featured banking API built with FastAPI and PostgreSQL with clean architecture and authentication.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">FastAPI</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">REST</span></div><a href="https://github.com/zahid2021/mini-bank-api" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="api"><div class="project-header"><span class="project-type api">Backend</span><a href="https://github.com/zahid2021/jammer-backend" target="_blank" class="project-link">↗</a></div><div class="project-title">Jammer Backend API</div><div class="project-desc">Full-featured e-commerce REST API with Auth, Products, Cart, Orders, Coupons and Banners. Built with FastAPI and MySQL.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">FastAPI</span><span class="tech-badge">MySQL</span></div><a href="https://github.com/zahid2021/jammer-backend" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="api"><div class="project-header"><span class="project-type api">Frontend</span><a href="https://github.com/zahid2021/jammer-frontend" target="_blank" class="project-link">↗</a></div><div class="project-title">Jammer Frontend</div><div class="project-desc">Modern frontend for Jammer project with clean UI and full backend API integration.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">Frontend</span><span class="tech-badge">API Integration</span></div><a href="https://github.com/zahid2021/jammer-frontend" target="_blank" class="github-link">GitHub →</a></div></div>
-<div class="project-card fade-in" data-type="ai"><div class="project-header"><span class="project-type ai">AI</span><a href="https://github.com/zahid2021/Chat-AI" target="_blank" class="project-link">↗</a></div><div class="project-title">Chat AI Application</div><div class="project-desc">AI-powered chat app with LLM integration, real-time messaging, and modern backend architecture.</div><div class="project-footer"><div class="project-tech"><span class="tech-badge">LLM</span><span class="tech-badge">Python</span><span class="tech-badge">AI</span></div><a href="https://github.com/zahid2021/Chat-AI" target="_blank" class="github-link">GitHub →</a></div></div>
-</div></section>
-<section id="contact" style="border-top:1px solid var(--border)"><div class="contact-wrapper"><div class="section-tag" style="text-align:center">// get in touch</div><h2 class="section-title" style="text-align:center">Let's <span style="color:var(--accent)">Work</span> Together</h2><p style="color:var(--muted);font-size:0.85rem;line-height:1.8;text-align:center">Looking for a Python developer for scrapers, REST APIs, and backend solutions? Available for freelance and full-time.</p><div class="contact-card"><p style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:8px">Ready to start a project?</p><p style="color:var(--muted);font-size:0.82rem">Reach out via email, LinkedIn or GitHub — I respond within 24 hours.</p><div class="contact-links"><a href="https://wa.me/923017941843" target="_blank" class="contact-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px;vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>WhatsApp</a><a href="https://www.linkedin.com/in/zahid-ali-1a1a4a358" target="_blank" class="contact-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px;vertical-align:middle"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a><a href="https://github.com/zahid2021" target="_blank" class="contact-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px;vertical-align:middle"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub Profile</a><a href="mailto:zm0485151@gmail.com" class="contact-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px;vertical-align:middle"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>zm0485151@gmail.com</a></div></div></div></section>
-<footer><p>2025 Zahid Ali — Python Developer</p><p style="color:var(--accent)">zahid2021.github.io</p></footer>
+
+<section id="skills" style="border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-label">// skills &amp; tools</div>
+    <h2 class="section-title">What I <em>Build With</em></h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3>Languages &amp; Backend</h3>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">REST APIs</span>
+          <span class="tag">Webhooks</span><span class="tag">Session Management</span><span class="tag">JWT</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Web Scraping</h3>
+        <div class="tags">
+          <span class="tag">Scrapy</span><span class="tag">Selenium</span><span class="tag">Playwright</span>
+          <span class="tag">BeautifulSoup</span><span class="tag">Requests</span><span class="tag">Data Pipelines</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>AI / LLM</h3>
+        <div class="tags">
+          <span class="tag">Groq API</span><span class="tag">Llama 3.3</span><span class="tag">Prompt Engineering</span>
+          <span class="tag">AI Chatbots</span><span class="tag">Lead Qualification</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Integrations</h3>
+        <div class="tags">
+          <span class="tag">Meta Graph API</span><span class="tag">Messenger</span><span class="tag">Instagram</span>
+          <span class="tag">Perfex CRM</span><span class="tag">SendPulse</span><span class="tag">Unipile</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Databases</h3>
+        <div class="tags">
+          <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">UUID Dedup</span>
+          <span class="tag">pgAdmin</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Tools &amp; Cloud</h3>
+        <div class="tags">
+          <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Render</span>
+          <span class="tag">PyCharm</span><span class="tag">VS Code</span><span class="tag">Cursor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-label">// experience</div>
+    <h2 class="section-title">Work <em>Experience</em></h2>
+    <article class="exp-card reveal">
+      <div class="exp-header">
+        <div>
+          <h3>Python Software Engineer</h3>
+          <div class="exp-company">Rixtysoft — Lahore, Pakistan</div>
+        </div>
+        <div class="exp-dates">3 Jan 2025 – Present</div>
+      </div>
+      <ul class="exp-list">
+        <li>Developed 30+ production-grade web scrapers for Swiss job portals using Python, Scrapy, Selenium, and Requests for large-scale automated data extraction.</li>
+        <li>Integrated Groq LLM API to transform unstructured job postings and PDF documents into structured datasets, reducing manual processing across scraping pipelines.</li>
+        <li>Designed a scalable MySQL data pipeline with UUID-based deduplication for reliable high-volume processing without duplicate records.</li>
+        <li>Built RESTful APIs with FastAPI and PostgreSQL including secure authentication, request validation, and structured error handling.</li>
+        <li>Implemented resilient scraping architecture with retries, rate-limit handling, and anti-bot strategies for stable production runs.</li>
+        <li>Engineered Connecticut PURA, Alabama PSC, and FERC eLibrary scrapers with multi-year coverage, resume capability, and structured CSV export.</li>
+        <li>Delivered production data extraction pipelines for US Tax Preparers, CER RegDocs, Ohio Regulatory, and Swiss Companies datasets.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="projects" style="border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-label">// projects</div>
+    <h2 class="section-title">Selected <em>Work</em></h2>
+
+    <a class="featured reveal" href="https://github.com/zahid2021/klozer" target="_blank" rel="noopener">
+      <div class="featured-body">
+        <span class="featured-eyebrow">Featured · AI / CRM Automation</span>
+        <h3>Klozer — AI Sales Qualification Chatbot</h3>
+        <p>
+          Production multi-channel AI sales platform for SalesMonster.AI. Qualifies leads across website chat,
+          Facebook Messenger, and Instagram DMs using FastAPI + Groq Llama 3.3, then auto-syncs to Perfex CRM
+          and SendPulse CRM/email pipelines. Deployed live on Render.
+        </p>
+        <div class="tech-row" style="margin-bottom:18px">
+          <span class="tech-badge">FastAPI</span>
+          <span class="tech-badge">Groq LLM</span>
+          <span class="tech-badge">Meta Graph API</span>
+          <span class="tech-badge">Perfex CRM</span>
+          <span class="tech-badge">SendPulse</span>
+          <span class="tech-badge">Render</span>
+        </div>
+        <span class="featured-cta">Open on GitHub →</span>
+      </div>
+      <div class="featured-side">
+        <div class="row"><span class="k">Client</span><span class="v">SalesMonster.AI</span></div>
+        <div class="row"><span class="k">Channels</span><span class="v">Web · Messenger · IG</span></div>
+        <div class="row"><span class="k">Live API</span><span class="v">klozer.onrender.com</span></div>
+        <div class="row"><span class="k">Repo</span><span class="v">github.com/zahid2021/klozer</span></div>
+      </div>
+    </a>
+
+    <div class="filters">
+      <button class="filter-btn active" type="button" data-filter="all">All</button>
+      <button class="filter-btn" type="button" data-filter="ai">AI</button>
+      <button class="filter-btn" type="button" data-filter="api">APIs</button>
+      <button class="filter-btn" type="button" data-filter="scraper">Scrapers</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/federal" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>FERC eLibrary Document Scraper</h3>
+        <p>High-performance multi-threaded scraper for FERC eLibrary API with resume support, auto-retry, and 50+ structured fields.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">Multithreading</span><span class="tech-badge">REST</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/ohio-scraper" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Ohio Regulatory Scraper</h3>
+        <p>Production regulatory data extraction pipeline with structured outputs for large-scale Ohio filings coverage.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">Scraping</span><span class="tech-badge">CSV</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-renobern" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Swiss Job Scraper — Renobern</h3>
+        <p>Production-ready scraper for Renovation-Bern AG with LLM-powered parsing and MySQL storage.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">Scrapy</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-neba" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Swiss Job Scraper — NEBA Gruppe</h3>
+        <p>Group-wide scraper for NEBA and subsidiaries with structured job extraction across the corporate network.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Groq LLM</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-haeusermann" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Swiss Job Scraper — Haeusermann</h3>
+        <p>Extracts job listings from PDF files using pypdf and LLM parsing for legal-firm career documents.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">pypdf</span><span class="tech-badge">LLM</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-tanne" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Swiss Job Scraper — Tanne</h3>
+        <p>Selenium-based scraper with API integration for Tanne social institution career pages.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Selenium</span><span class="tech-badge">API</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-halter" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Swiss Job Scraper — Halter AG</h3>
+        <p>REST API-based scraper for Halter AG construction company job portal.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">REST API</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-jobagent" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Swiss Job Scraper — JobAgent</h3>
+        <p>Large-scale scraper for JobAgent.ch extracting commercial positions at volume.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-jobscout24" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Swiss Job Scraper — JobScout24</h3>
+        <p>High-volume scraper for JobScout24.ch, one of Switzerland’s largest job portals.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-jobup" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Swiss Job Scraper — JobUp</h3>
+        <p>Automated JobUp.ch scraper with structured extraction and deduplication logic.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Requests</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-schwarzag" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Swiss Job Scraper — Schwarz AG</h3>
+        <p>Construction career scraper with LLM-powered parsing for structured job data.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Groq LLM</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/scraper-wirth" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Swiss Job Scraper — Wirth AG</h3>
+        <p>Career page scraper with automated extraction and UUID-based deduplication.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Requests</span><span class="tech-badge">Python</span><span class="tech-badge">MySQL</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/swiss-companies-scraper" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Swiss Companies Scraper</h3>
+        <p>Large-scale company data scraper covering contacts, industry, and location fields.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Scrapy</span><span class="tech-badge">Python</span><span class="tech-badge">Database</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/us-tax-preparers-scraper" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>US Tax Preparers Scraper</h3>
+        <p>Automated extraction of US tax preparer credentials, location, and contact details.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Requests</span><span class="tech-badge">Python</span><span class="tech-badge">CSV</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/cer-regdocs-scraper" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>CER RegDocs Scraper</h3>
+        <p>Regulatory documents scraper with automated extraction and structured storage pipeline.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Python</span><span class="tech-badge">PDF</span><span class="tech-badge">Automation</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="scraper" href="https://github.com/zahid2021/fb-scraper" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype">Scraper</span><span class="arrow">↗</span></div>
+        <h3>Facebook Page Scraper</h3>
+        <p>Selenium scraper for posts and comments with cookie login, auto-scroll, and CSV export.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Selenium</span><span class="tech-badge">Pandas</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="api" href="https://github.com/zahid2021/mini-bank-api" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype api">REST API</span><span class="arrow">↗</span></div>
+        <h3>Mini Bank REST API</h3>
+        <p>Banking API with FastAPI and PostgreSQL — clean architecture and secure authentication.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">FastAPI</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">JWT</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="api" href="https://github.com/zahid2021/jammer-backend" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype api">Backend</span><span class="arrow">↗</span></div>
+        <h3>Jammer Backend API</h3>
+        <p>E-commerce REST API with Auth, Products, Cart, Orders, Coupons, and Banners on FastAPI + MySQL.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">FastAPI</span><span class="tech-badge">MySQL</span><span class="tech-badge">Python</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="api" href="https://github.com/zahid2021/jammer-frontend" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype api">Frontend</span><span class="arrow">↗</span></div>
+        <h3>Jammer Frontend</h3>
+        <p>Modern frontend for the Jammer e-commerce stack with full backend API integration.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">Frontend</span><span class="tech-badge">API</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+
+      <a class="project-card reveal" data-type="ai" href="https://github.com/zahid2021/Chat-AI" target="_blank" rel="noopener">
+        <div class="project-top"><span class="ptype ai">AI</span><span class="arrow">↗</span></div>
+        <h3>Chat AI Application</h3>
+        <p>AI-powered chat app with LLM integration, real-time messaging, and modern backend architecture.</p>
+        <div class="project-foot"><div class="tech-row"><span class="tech-badge">LLM</span><span class="tech-badge">Python</span><span class="tech-badge">AI</span></div><span class="gh-label">GitHub →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="education" style="border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-label">// education</div>
+    <h2 class="section-title">Academic <em>Background</em></h2>
+    <div class="edu-card reveal">
+      <div>
+        <h3>BS Software Engineering</h3>
+        <p>The Islamia University of Bahawalpur</p>
+      </div>
+      <div class="edu-years">2021 – 2025</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="contact-panel reveal">
+      <div class="section-label" style="text-align:center">// contact</div>
+      <h2>Let’s build something solid</h2>
+      <p>
+        Looking for a Python engineer for FastAPI backends, AI chatbots, CRM automation, or production scrapers?
+        Available for freelance and full-time. I respond within 24 hours.
+      </p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:zahid20mehmood@gmail.com">zahid20mehmood@gmail.com</a>
+        <a class="contact-link" href="tel:+923017941843">+92 301 7941843</a>
+        <a class="contact-link" href="https://wa.me/923017941843" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="contact-link" href="https://www.linkedin.com/in/zahid-ali-1a1a4a358" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="contact-link" href="https://github.com/zahid2021" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Zahid Mehmood — Software Engineer</p>
+  <p class="accent">zahid2021.github.io</p>
+</footer>
+
 <script>
-function filterProjects(type,btn){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.project-card').forEach(card=>{if(type==='all'||card.dataset.type===type){card.style.display='flex'}else{card.style.display='none'}})}
-const observer=new IntersectionObserver((entries)=>{entries.forEach((entry,i)=>{if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('visible'),i*80)}})},{threshold:0.1});
-document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+(function () {
+  const nav = document.getElementById('nav');
+  const toggle = document.getElementById('navToggle');
+  toggle.addEventListener('click', function () {
+    nav.classList.toggle('open');
+    toggle.textContent = nav.classList.contains('open') ? '✕' : '☰';
+  });
+  nav.querySelectorAll('.nav-links a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      nav.classList.remove('open');
+      toggle.textContent = '☰';
+    });
+  });
+
+  document.querySelectorAll('.filter-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var type = btn.getAttribute('data-filter');
+      document.querySelectorAll('#projectsGrid .project-card').forEach(function (card) {
+        var show = type === 'all' || card.getAttribute('data-type') === type;
+        card.style.display = show ? 'flex' : 'none';
+      });
+    });
+  });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry, i) {
+      if (entry.isIntersecting) {
+        setTimeout(function () { entry.target.classList.add('visible'); }, i * 40);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+})();
 </script>
-</body></html>
+</body>
+</html>
